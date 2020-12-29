@@ -1,0 +1,13 @@
+{% extends 'base_auth.html' %}
+
+{% block title %}Logged out{% endblock %}
+
+{% block form_use %} Logged out{% endblock %}
+
+{% block content %}
+    <p class="header__text">
+        You have been successfully logged out. You can <a href="{% url 'login' %}" class="link">log in again</a>
+    </p>
+{% endblock %}
+{% block social_auth %}
+{% endblock %}

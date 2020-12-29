@@ -1,0 +1,27 @@
+{% extends 'base_auth.html' %}
+
+{% block title %}New Purchase{% endblock %}
+
+{% block form_use %}Make new purchase{% endblock %}
+
+{% block content %}
+    <form action="{% url "shop:newpurchase" %}" method="POST" class="form" enctype="multipart/form-data">
+        {% csrf_token %}
+        {% if product_form.errors %}
+        <p class="help is-danger">
+            Please check that you have filled all fields correctly!
+        </p>
+        {% endif %}
+        {% for field in product_form %}
+           <div class="form__group">
+                <label for="{{field.id_for_label}}"  class="form__label">{{field.html_name}}</label>
+                {{field}}
+           </div>
+        {% endfor %}
+        <div class="form__group">
+            <input type="submit" value="Purchase" class="btn btn__green">
+        </div>
+    </form>
+{% endblock %}
+
+{% block social_auth %}{% endblock %}

@@ -1,0 +1,32 @@
+{% extends 'base_dash.html' %}
+
+{% block title %}{{product.name}}{% endblock %}
+
+{% block main %}
+    {% block row_content %}
+        <div class="row">
+            <div class="col-1-of-2">
+            {% if product.image %}
+                {% load thumbnail %}
+                <a href="{{product.image.url}}">
+                    <img src="{%  thumbnail product.image 300x0 %}" class="image-detail" alt="product image missing">
+                </a>
+            
+            {% endif %}
+            </div>
+            <div class="col-1-of-2">
+                <div class="u-margin-bottom-medium">
+                    <h2 class="heading-secondary heading-secondary-thin u-margin-bottom-small lower">
+                        {{product.name}}
+                    </h2>
+                    <h2 class="heading-tertiary ">
+                        Product specifications
+                    </h2>
+                </div>
+                <div class="howitworks__box-text">
+                    {{product.description}}
+                </div>
+            </div>
+        </div>
+    {% endblock %}
+{% endblock %}

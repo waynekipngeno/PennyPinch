@@ -1,0 +1,17 @@
+{% extends 'base_auth.html' %}
+{% load static %}
+
+{% block title %}Welcome{% endblock %}
+
+{% block form_use %}Welcome{% endblock %}
+
+{% block content %}
+    <h1 class="heading-tertiary">
+        Welcome {{new_user.first_name}}!
+    </h1>
+    <p class="header__text">
+        Your account has been successfully created. Now you can <a href="{% url 'login' %}" class="link">log in</a>
+    </p>
+{% endblock %}
+{% block social_auth %}
+{% endblock %}

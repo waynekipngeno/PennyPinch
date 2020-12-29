@@ -1,0 +1,80 @@
+{% extends 'base_dash.html' %}
+{% load static %}
+{% block title %}Dashboard{% endblock %}
+
+
+{% block navigation__menu %}
+    <nav class="navigation__nav">
+        <ul class="navigation__list">
+            <li class="navigation__item">
+                <a href="#" class="navigation__link">Messages</a>
+            </li>
+            <li class="navigation__item">
+                <a href="#" class="navigation__link">Offers</a>
+            </li>
+            <li class="navigation__item">
+                <a href="#" class="navigation__link">My orders</a>
+            </li>
+            <li class="navigation__item">
+                <a href="#" class="navigation__link">Account</a>
+            </li>
+            <li class="navigation__item">
+                <a href="{% url 'logout' %}" class="navigation__link">Logout</a>
+            </li>
+            
+        </ul>
+    </nav>   
+{% endblock %}
+
+
+{% block main %}
+        {% block row__content %}
+        <div class="section__user-actions">
+            <div class="row">
+                <div class="col-1-of-2">
+                    <div class="dash-card">
+                        <div class="icon-container">
+                            <a href="#" class="dash-card__links"><img src="{% static "images/add.svg" %}" alt="" class="dash-card__links-icons"></a>
+                        </div>
+                        <h3 class="heading-tertiary-dash">
+                            new purchase
+                        </h3>
+                    </div>
+                </div>
+                <div class="col-1-of-2">
+                    <div class="dash-card">
+                        <div class="icon-container">
+                            <a href="#" class="dash-card__links"><img src="{% static "images/chat.svg" %}" alt="" class="dash-card__links-icons"></a>
+                        </div>
+                        <h3 class="heading-tertiary-dash">
+                            Messages
+                        </h3>
+                    </div>              
+                </div>  
+            </div>
+            <div class="row">
+                <div class="col-1-of-2">
+                    <div class="dash-card">
+                        <div class="icon-container">
+                            <a href="#" class="dash-card__links"><img src="{% static "images/sale.svg" %}" alt="" class="dash-card__links-icons"></a>
+                        </div>
+                        <h3 class="heading-tertiary-dash">
+                            Offers
+                        </h3>
+                    </div>
+                </div>
+                <div class="col-1-of-2">
+                    <div class="dash-card">
+                        <div class="icon-container">
+                            <a href="#" class="dash-card__links"><img src="{% static "images/shopping-bag.svg" %}" alt="" class="dash-card__links-icons"></a>
+                        </div>
+                        <h3 class="heading-tertiary-dash">
+                            My orders
+                        </h3>
+                    </div> 
+                </div>
+            </div>
+        </div>
+        {% endblock %}
+        
+{% endblock %}

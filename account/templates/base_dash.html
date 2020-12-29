@@ -1,0 +1,97 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}{% endblock %}</title>
+    <!-- fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Julius+Sans+One&display=swap" rel="stylesheet">
+    <!-- style  -->
+    <link rel="stylesheet" href="{% static "css/style.css" %}">
+    <link rel="stylesheet" href="{% static "css/icon-font.css" %}">
+</head>
+<body>
+    
+    <div class="navigation">      
+        <div class="navigation__logo-box">
+            <h1 class="navigation__logo-box-logo">
+                PennyPinch
+            </h1>
+        </div>
+        <div class="navigation__menu">
+            {% block navigation__menu %}
+            
+            {% endblock %}
+        </div>       
+    </div>
+    
+    
+    <main>
+        {% block main %}       
+            {% block row_content %}
+            
+            {% endblock %}
+        {% endblock %}
+        {% block content %}
+        {% endblock %}
+    </main>
+    
+    
+    <footer class="footer">
+        {% block footer %}
+
+        <div class="footer__logo-box">
+            <h1 class="footer__logo-box-logo">
+                PennyPinch
+            </h1>
+        </div>
+        <div class="row">
+            <div class="col-1-of-3">
+                <div class="footer__navigation">
+                    <ul class="footer__list">
+                        <li class="footer__item"><a href="#" class="footer__link">About Company</a></li>
+                        <li class="footer__item"><a href="#" class="footer__link">Contact us</a></li>
+                        <li class="footer__item"><a href="#" class="footer__link">Careers</a></li>
+                        <li class="footer__item"><a href="#" class="footer__link">Privacy Policy</a></li>
+                        <li class="footer__item"><a href="#" class="footer__link">Terms</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="col-1-of-3">
+                <div class="footer__quicklinks">
+                    <ul class="footer__list">
+                        <li class="footer__item"><a href="#" class="footer__link">How it works</a></li>
+                        <li class="footer__item"><a href="#" class="footer__link">Vendor sign in</a></li>
+                        <li class="footer__item"><a href="#" class="footer__link">Buyer sign in</a></li>
+                        <li class="footer__item"><a href="#" class="footer__link">For businesses</a></li>
+                        
+                    </ul>
+                </div>
+            </div>
+            <div class="col-1-of-3">
+                <p class="footer__copyright">
+                    PennyPinch is a leading procument platform with millions of users worldwide. We make it easy for everyone to save on purchases.
+                </p>
+                <p class="footer__copyright">
+                    Cut costs with PennyPinch, as the economy slows down, it's essential to save on every purchase. 
+                    Copyright &copy; 2017-2020 PennyPinch.
+                </p>
+                <div class="footer__social">                 
+                    <ul class="footer__social-list">
+                        <li class="footer__item-social"><a href="#" class="footer__link-social">
+                            <img src="{% static "images/facebook.svg" %}" alt="facebook" class="footer__social-icon">
+                        </a></li>
+                        <li class="footer__item-social"><a href="#" class="footer__link-social">
+                            <img src="{% static "images/google.svg" %}" alt="google" class="footer__social-icon">
+                        </a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        {% endblock %}
+    </footer>
+    
+</body>
+</html>
